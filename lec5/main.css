@@ -1,0 +1,43 @@
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #01a390;
+    position: sticky;
+    top: 0;
+}
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
+
+}
+.nav-items > ul >li{
+    padding: 15px;
+}
+.logo{
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.card{
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+.card > img{
+    width: 100%;
+    border-radius: 10px;
+}
+.rlist{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer{
+    background-color: #01a390;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
