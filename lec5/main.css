@@ -41,3 +41,15 @@
     display: flex;
     justify-content: center;
 }
+.search-container{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.search-input{
+    width: 25%;
+    height: 2rem;
+}
+.search-btn{
+    width: 7%;
+}
