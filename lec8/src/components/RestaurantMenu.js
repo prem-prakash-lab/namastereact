@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { image_id } from "../Config";
+import { image_id, image_menu } from "../Config";
 import Shimmer from "./Shimmer";
 
 
@@ -20,19 +20,32 @@ const RestaurantMenu = () => {
   }
   return (!(restaurant && menu)) ? <Shimmer/> :(
     <div className="menu">
-      <div>
+      <div className="menu-card">
           <h1>Restraunt resId: {resId}</h1>
           <h2>{restaurant?.name}</h2>
           <img src={image_id + restaurant?.cloudinaryImageId}/>
           <h2>{restaurant?.areaName}</h2>
-          <h2>{restaurant?.avgRating}star</h2>
+          <h2>{restaurant?.avgRating} star</h2>
+          <h2>{restaurant?.locality}</h2>
+          <h2>{restaurant?.areaName}</h2>
           <h2>{restaurant?.city}</h2>
-          <h2>{restaurant?.costForTwo}</h2>
+          <h2>{restaurant?.sla?.slaString}</h2>
+          <h2>{restaurant?.costForTwoMessage}</h2>
       </div>
-      <div>
-        <h1>menu</h1>
-       <ul>{
-       Object.values(menu).map((item)=><li key={item?.card?.info?.id}>{item?.card?.info?.name}</li>)}</ul>
+      <div className="menu-head">
+        <h1>MENU</h1>
+       <ul className="menu-item">
+        {
+          Object.values(menu).map((item)=>
+            <li key={item?.card?.info?.id}>
+              <div>
+                <h4>{item?.card?.info?.name}</h4>
+                <img src={image_menu+item?.card?.info?.imageId}/>
+                <h4>₹{(item?.card?.info?.price)/100}</h4>
+              </div>
+            </li>)
+        }
+        </ul>
       </div>
 
     </div>

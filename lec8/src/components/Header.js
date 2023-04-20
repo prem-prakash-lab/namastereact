@@ -23,9 +23,9 @@ const Header=()=>{
                     <li> <Link to="/cart"> Cart </Link></li>
                 </ul>
             </div>
-            {
+            {/* {
             isLoggedIn ?(<button onClick={()=>setisLoggedIn(false)}>logout</button>) : (<button  onClick={()=>setisLoggedIn(true)}>login</button>)
-            }
+            } */}
         </div>
     );
 };
